@@ -1,0 +1,19 @@
+{
+  "name": "places-js-examples",
+  "version": "0.0.0",
+  "description": "Transform any input into geocoding with Jawg Places",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1",
+    "js-beautify": "^1.11.0"
+  },
+  "scripts": {
+    "format": "js-beautify --config .jsbeautifyrc -f examples/**/* server.js -r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jawg/places-js-examples.git"
+  },
+  "author": "Jawg Maps <contact@jawg.io> (https://jawg.io)",
+  "license": "MIT"
+}
