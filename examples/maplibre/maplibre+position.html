@@ -1,22 +1,25 @@
 <html>
-<head>
-  <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.js"></script>
-</head>
-<body>
-  <div id="my-map" style="height: 100%; min-height: 500px;"></div>
-  <script>
-    const map = new maplibregl.Map({
-      container: 'my-map',
-      style: `https://api.jawg.io/styles/jawg-sunny.json?access-token=<YOUR_ACCESS_TOKEN>`,
-      center: [0, 0],
-      zoom: 1
-    });
-    map.addControl(new maplibregl.NavigationControl(), 'bottom-left');
-    map.addControl(new JawgPlaces.MapLibre({
-      searchOnTyping: true,
-    }), 'top-right')
-  </script>
-</body>
+  <head>
+    <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.js"></script>
+  </head>
+  <body>
+    <div id="my-map" style="height: 100%; min-height: 500px"></div>
+    <script>
+      const map = new maplibregl.Map({
+        container: 'my-map',
+        style: `https://api.jawg.io/styles/jawg-sunny.json?access-token=<YOUR_ACCESS_TOKEN>`,
+        center: [0, 0],
+        zoom: 1,
+      });
+      map.addControl(new maplibregl.NavigationControl(), 'bottom-left');
+      map.addControl(
+        new JawgPlaces.MapLibre({
+          searchOnTyping: true,
+        }),
+        'top-right',
+      );
+    </script>
+  </body>
 </html>

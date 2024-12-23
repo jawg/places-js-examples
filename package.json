@@ -5,10 +5,10 @@
   "dependencies": {},
   "devDependencies": {
     "express": "^4.17.1",
-    "js-beautify": "^1.11.0"
+    "prettier": "^3.4.2"
   },
   "scripts": {
-    "format": "js-beautify --config .jsbeautifyrc -f examples/**/* server.js -r"
+    "format": "find examples -name '*.html' -exec prettier --config .prettierrc --parser html -w {} \\; && prettier --config .prettierrc -w server.js"
   },
   "repository": {
     "type": "git",

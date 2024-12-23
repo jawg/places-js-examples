@@ -1,34 +1,44 @@
 <html>
-<head>
-  <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.js"></script>
-</head>
-<body>
-  <div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
-    <div style="max-width: 50%; align-items: top; display: flex; flex: 0 0 50%; border-right: #444 solid 2px; overflow: auto; width: 100%;">
-      <input id="my-input" type="text" placeholder="Search">
+  <head>
+    <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.min.js"></script>
+  </head>
+  <body>
+    <div style="width: 100%; height: 100%; display: flex; flex-direction: row">
+      <div
+        style="
+          max-width: 50%;
+          align-items: top;
+          display: flex;
+          flex: 0 0 50%;
+          border-right: #444 solid 2px;
+          overflow: auto;
+          width: 100%;
+        "
+      >
+        <input id="my-input" type="text" placeholder="Search" />
+      </div>
+      <div style="min-width: 50%; flex: 0 0 50%">
+        <div id="my-map" style="height: 100%; min-height: 500px"></div>
+      </div>
     </div>
-    <div style="min-width: 50%; flex: 0 0 50%;">
-      <div id="my-map" style="height: 100%; min-height: 500px;"></div>
-    </div>
-  </div>
 
-  <script>
-    const map = new maplibregl.Map({
-      container: 'my-map',
-      style: `https://api.jawg.io/styles/jawg-sunny.json?access-token=<YOUR_ACCESS_TOKEN>`,
-      center: [0, 0],
-      zoom: 1
-    });
-    map.addControl(new maplibregl.NavigationControl());
-    new JawgPlaces.MapLibre({
-      input: '#my-input',
-      searchOnTyping: true,
-      transition: {
-        type: 'hybrid',
-      }
-    }).attachMap(map)
-  </script>
-</body>
+    <script>
+      const map = new maplibregl.Map({
+        container: 'my-map',
+        style: `https://api.jawg.io/styles/jawg-sunny.json?access-token=<YOUR_ACCESS_TOKEN>`,
+        center: [0, 0],
+        zoom: 1,
+      });
+      map.addControl(new maplibregl.NavigationControl());
+      new JawgPlaces.MapLibre({
+        input: '#my-input',
+        searchOnTyping: true,
+        transition: {
+          type: 'hybrid',
+        },
+      }).attachMap(map);
+    </script>
+  </body>
 </html>

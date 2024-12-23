@@ -1,35 +1,44 @@
 <html>
-<head>
-  <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-</head>
-<body>
-  <div style="width: 100%; height: 100%; display: flex; flex-direction: row;">
-    <div style="max-width: 50%; align-items: top; display: flex; flex: 0 0 50%; border-right: #444 solid 2px; overflow: auto; width: 100%;">
-      <input id="my-input" type="text" placeholder="Search">
+  <head>
+    <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div style="width: 100%; height: 100%; display: flex; flex-direction: row">
+      <div
+        style="
+          max-width: 50%;
+          align-items: top;
+          display: flex;
+          flex: 0 0 50%;
+          border-right: #444 solid 2px;
+          overflow: auto;
+          width: 100%;
+        "
+      >
+        <input id="my-input" type="text" placeholder="Search" />
+      </div>
+      <div style="min-width: 50%; flex: 0 0 50%">
+        <div id="my-map" style="height: 100%; min-height: 500px"></div>
+      </div>
     </div>
-    <div style="min-width: 50%; flex: 0 0 50%;">
-      <div id="my-map" style="height: 100%; min-height: 500px;"></div>
-    </div>
-  </div>
 
-  <script>
-    const map = new L.Map('my-map').setView([0, 0], 2);
-    L.tileLayer(
-      `https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=<YOUR_ACCESS_TOKEN>`, {
-        attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>',
-        maxZoom: 22
-      }
-    ).addTo(map);
-    new JawgPlaces.Leaflet({
-      input: '#my-input',
-      searchOnTyping: true,
-      transition: {
-        type: 'hybrid',
-      },
-      L: L,
-    }).attachMap(map)
-  </script>
-</body>
+    <script>
+      const map = new L.Map('my-map').setView([0, 0], 2);
+      L.tileLayer(`https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=<YOUR_ACCESS_TOKEN>`, {
+        attribution:
+          '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>',
+        maxZoom: 22,
+      }).addTo(map);
+      new JawgPlaces.Leaflet({
+        input: '#my-input',
+        searchOnTyping: true,
+        transition: {
+          type: 'hybrid',
+        },
+        L: L,
+      }).attachMap(map);
+    </script>
+  </body>
 </html>

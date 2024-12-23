@@ -1,26 +1,26 @@
 <html>
-<head>
-  <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
-</head>
-<body>
-  <input id="my-input" type="text" placeholder="Search" />
-  <script>
-    new JawgPlaces.Input({
-      input: '#my-input',
-      searchOnTyping: true,
-      focus: {
-        gids: "whosonfirst:region:85672093",
-      },
-    });
+  <head>
+    <script src="https://api.jawg.io/libraries/jawg-places@latest/jawg-places.js?access-token=<YOUR_ACCESS_TOKEN>"></script>
+  </head>
+  <body>
+    <input id="my-input" type="text" placeholder="Search" />
+    <script>
+      new JawgPlaces.Input({
+        input: '#my-input',
+        searchOnTyping: true,
+        focus: {
+          gids: 'whosonfirst:region:85672093',
+        },
+      });
 
-    // new JawgPlaces.Input({
-    //   input: '#my-input',
-    //   searchOnTyping: true,
-    //   focus: {
-    //     gids: () => [ "whosonfirst:region:85672093" ]
-    //     }
-    //   },
-    // })
-  </script>
-</body>
+      // new JawgPlaces.Input({
+      //   input: '#my-input',
+      //   searchOnTyping: true,
+      //   focus: {
+      //     gids: () => [ "whosonfirst:region:85672093" ]
+      //     }
+      //   },
+      // })
+    </script>
+  </body>
 </html>
