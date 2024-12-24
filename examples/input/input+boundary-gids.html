@@ -9,18 +9,14 @@
         input: '#my-input',
         searchOnTyping: true,
         boundary: {
-          gids: 'whosonfirst:region:85672093',
+          // GIDs as an array
+          gids: ['whosonfirst:region:85672093'],
+          // GIDs as a string
+          // gids: 'whosonfirst:region:85672093',
+          // GIDs as a function, can be changed dynamically
+          // gids: () => ['whosonfirst:region:85672093'],
         },
       });
-
-      // new JawgPlaces.Input({
-      //   input: '#my-input',
-      //   searchOnTyping: true,
-      //   boundary: {
-      //     gids: () => [ "whosonfirst:region:85672093" ]
-      //     }
-      //   },
-      // })
     </script>
   </body>
 </html>

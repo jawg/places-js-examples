@@ -8,16 +8,16 @@
       new JawgPlaces.Input({
         input: '#my-input',
         searchOnTyping: true,
+        // layers and sources as arrays
         layers: ['localadmin', 'locality', 'borough'],
-        sources: ['wof'],
+        sources: ['wof', 'openstreetmap'],
+        // layers and sources as strings
+        // layers: 'localadmin,locality,borough',
+        // sources: 'wof,openstreetmap',
+        // layers and sources as functions, can be changed dynamically
+        // layers: () => ['localadmin', 'locality', 'borough'],
+        // sources: () => 'wof,openstreetmap',
       });
-
-      // new JawgPlaces.Input({
-      //   input: '#my-input',
-      //   searchOnTyping: true,
-      //   layers: () => ['localadmin', 'locality', 'borough'],
-      //   sources: () => 'wof',
-      // })
     </script>
   </body>
 </html>

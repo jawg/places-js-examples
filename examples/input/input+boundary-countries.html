@@ -9,17 +9,14 @@
         input: '#my-input',
         searchOnTyping: true,
         boundary: {
+          // Countries as an array
           countries: ['fra', 'be', 'lu', 'ch'],
+          // Countries as a string
+          // countries: 'fra,be,lu,ch',
+          // Countries as a function, can be changed dynamically
+          // countries: () => ['fra', 'be', 'lu', 'ch'],
         },
       });
-
-      // new JawgPlaces.Input({
-      //   input: '#my-input',
-      //   searchOnTyping: true,
-      //   boundary: {
-      //     countries: () => ['fra', 'be', 'lu', 'ch']
-      //   },
-      // })
     </script>
   </body>
 </html>

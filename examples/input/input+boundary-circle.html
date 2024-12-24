@@ -9,23 +9,22 @@
         input: '#my-input',
         searchOnTyping: true,
         boundary: {
+          // Circle as an object
           circle: {
             lat: 46.842269,
             lon: 2.39985,
             radius: 500,
           },
+          // Circle as a function, can be changed dynamically
+          // circle: () => {
+          //   return {
+          //     lat: 46.842269,
+          //     lon: 2.39985,
+          //     radius: 500
+          //   }
+          // }
         },
       });
-
-      // new JawgPlaces.Input({
-      //   input: '#my-input',
-      //   searchOnTyping: true,
-      //   boundary: {
-      //     circle: () => {
-      //       return { lat: 46.842269, lon: 2.39985, radius: 500 }
-      //     }
-      //   },
-      // })
     </script>
   </body>
 </html>

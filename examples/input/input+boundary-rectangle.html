@@ -8,17 +8,17 @@
       new JawgPlaces.Input({
         input: '#my-input',
         searchOnTyping: true,
-        focus: {
-          // Point as an object
-          point: {
-            lat: 47.1685,
-            lon: 1.7567,
+        boundary: {
+          // Rectangle as an object
+          rectangle: {
+            min: { lat: 43.032582, lon: 5.097656 },
+            max: { lat: 49.006466, lon: 26.762695 },
           },
-          // Point as a function, can be changed dynamically
-          // point: () => {
+          // Rectangle as a function, can be changed dynamically
+          // rectangle: () => {
           //   return {
-          //     lat: 47.1685,
-          //     lon: 1.7567,
+          //     min: { lat: 43.032582, lon: 5.097656 },
+          //     max: { lat: 49.006466, lon: 26.762695 },
           //   };
           // },
         },
